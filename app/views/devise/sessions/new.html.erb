@@ -1,20 +1,27 @@
-<h2>Log in</h2>
+<div class="video-background">
+  <video autoplay muted loop playsinline class="video-foreground">
+      <source src="https://res.cloudinary.com/dzububqki/video/upload/v1623365769/Sunset_-_23070_ehddwe.mp4" type="video/mp4">
+  </video>
+</div>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<div class="signin-form">
+  <div>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: false,
+                    autofocus: true,
+                    input_html: { autocomplete: "Email" } %>
+        <%= f.input :password,
+                    required: false,
+                    input_html: { autocomplete: "Mot de passe" } %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Se connecter", class: "btn button-signin col-md-12" %>
+      </div>
+    <% end %>
+  <%= render "devise/shared/links" %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
