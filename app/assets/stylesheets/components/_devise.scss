@@ -1,11 +1,17 @@
+.modal-content {
+  border-radius: 5px;
+}
+
 .signin-form {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 80%;
-  padding: 40px;
+  padding: 20px;
   margin: auto;
+  border-radius: 5px;
   > div {
+    width: 100%;
     background-color: white;
     border-radius: 5px;
     padding: 20px;

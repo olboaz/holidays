@@ -1,6 +1,6 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= params[:action] == "home" ? "navbar-dark bg-transparent fixed-top" : "navbar-light" %>">
-
-  <%= link_to root_path, class: "navbar-brand d-flex align-items-center", style: "background: white; opacity: 0.8; padding: 5px; border-radius: 4px"  do %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon navbar-dark bg-transparent fixed-top">
+<!-- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= params[:action] == "home" ? "navbar-dark bg-transparent fixed-top" : "navbar-light" %>"> -->
+  <%= link_to root_path, class: "navbar-brand d-flex align-items-center", style: "background: white; opacity: 0.8; padding: 5px; border-radius: 4px;     border: 1px solid #eabe07;"  do %>
     <%= image_tag "tenor.gif" %>
     <h6 class="ml-2" style="font-style: italic; font-family: Roboto;color:#eabe07;margin-bottom: 0;">My Holidays</h6>
   <% end %>
@@ -23,10 +23,16 @@
           </div>
         </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
+        <button type="button" class="btn btn-outline-light mr-2" data-toggle="modal" data-target="#signIn" method='get'>
+          Connection
+        </button>
+        <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#signUp"  method='get'>
+          Inscription
+        </button>
       <% end %>
     </ul>
+
   </div>
 </div>
+
+
