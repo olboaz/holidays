@@ -19,7 +19,10 @@
                     placeholder: "Pseudo",
                     autofocus: true,
                     input_html: { autocomplete: "Pseudo" }%>
-        <%= f.input :first_name,
+        <%= f.input :photo, as: :file,
+                    required: true,
+                    label: "Photo" %>
+<!--         <%= f.input :first_name,
                     required: true,
                     label: false,
                     placeholder: "Prénom",
@@ -30,7 +33,7 @@
                     label: false,
                     placeholder: "Nom",
                     autofocus: true,
-                    input_html: { autocomplete: "Nom" }%>
+                    input_html: { autocomplete: "Nom" }%> -->
         <%= f.input :password,
                     required: true,
                     label: false,

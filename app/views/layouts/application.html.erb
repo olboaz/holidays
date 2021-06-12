@@ -19,8 +19,13 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/signin' %>
-    <%= render 'shared/signup' %>
-    <%= yield %>
+    <% if user_signed_in? %>
+      <div class="main-container">
+        <%= yield %>
+      </div>
+    <% else %>
+      <%= render 'shared/video' %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>

@@ -1,0 +1,47 @@
+.places-container {
+  margin-top : 20px;
+  h3 {
+    font-family: Lato;
+    margin: 10px 0;
+  }
+  table {
+    display: grid;
+    border-collapse: collapse;
+    min-width: 100%;
+    grid-template-columns:
+      minmax(150px, 1fr)
+      minmax(150px, 2fr);
+    thead,
+    tbody,
+    tr {
+      display: contents;
+    }
+    th,
+    td {
+      padding: 10px 2px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    th {
+      position: sticky;
+      background: #6dc7d7;
+      top: 0;
+      text-align: left;
+      font-weight: normal;
+      color: white;
+      height: 40px;
+    }
+
+    th:last-child {
+      border: 0;
+    }
+
+    td {
+      padding: 10px 2px;
+      background: #FAFAFA;
+      border-bottom: 2px solid #F4F4F4;
+    }
+  }
+}

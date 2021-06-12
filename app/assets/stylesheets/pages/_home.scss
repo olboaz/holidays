@@ -3,7 +3,13 @@
   display: flex;
   justify-content: center;
 }
-
 .leaflet-top {
   top: 60px;
+}
+.main-container {
+  height: 100%;
+}
+.container {
+  height: 100%;
+  padding-top: 70px;
 }

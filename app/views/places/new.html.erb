@@ -1,22 +1,24 @@
-<div class="d-flex align-items-center">
-  <div class="container background background-filter" style="width: 800px;padding:0;">
-    <div class="row">
-      <div class="col-12">
+<div class="container">
+  <div class="d-flex align-items-center">
+    <div class="container background background-filter" style="width: 800px;padding:0;">
+      <div class="row">
+        <div class="col-12">
 
-        <h1 class="text-center my-3">Ajoute ton lieu de vacance</h1>
-        <%= simple_form_for(@place) do |f| %>
-          <div class="form-place">
-            <div class="col-6 form-group">
-              <%= f.input :name, placeholder: 'Nom', label: false %>
-              <%= f.input :description, placeholder: 'description', label: false %>
-              <%= f.input :address, placeholder: 'Adresse', label: false, id: 'place_address' %>
+          <h1 class="text-center my-3">Ajoute ton lieu de vacance</h1>
+          <%= simple_form_for(@place) do |f| %>
+            <div class="form-place">
+              <div class="col-6 form-group">
+                <%= f.input :name, placeholder: 'Nom', label: false %>
+                <%= f.input :description, placeholder: 'description', label: false %>
+                <%= f.input :address, placeholder: 'Adresse', label: false, id: 'place_address' %>
+              </div>
             </div>
-          </div>
-          <div class="mb-3 text-center w-100">
-            <%= f.button :submit, "Ajouter", class: 'btn btn-lg btn-primary' %>
-          </div>
-        <% end %>
+            <div class="mb-3 text-center w-100">
+              <%= f.button :submit, "Ajouter", class: 'btn btn-lg btn-primary' %>
+            </div>
+          <% end %>
 
+        </div>
       </div>
     </div>
   </div>

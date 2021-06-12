@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="places-container">
+    <h3>Liste de mes lieux de vacances</h3>
+    <table>
+      <tr>
+        <th style="padding-left: 10px;">Nom</th>
+        <th>Lieu</th>
+      </tr>
+      <tr>
+        <% @places.each do |place| %>
+          <td style="padding-left: 10px;"><%= place.name %></td>
+          <td><%= place.address %></td>
+        <% end %>
+      </tr>
+    </table>
+  </div>
+</div>
