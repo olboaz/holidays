@@ -1,0 +1,1217 @@
+// // Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// // External libraries
+@import "bootstrap/scss/bootstrap";
+// @import "font-awesome-sprockets";
+// @import "font-awesome";
+// // Your CSS partials
+// @import "components/index";
+
+body {
+  background: #FFFFFF;
+  margin: 0;
+  padding: 5px;
+}
+
+///////////////////////////////////////////////////////
+////////////////////// PDF ORDER //////////////////////
+///////////////////////////////////////////////////////
+
+.order-restaurant {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  > #order-restaurant-title{
+    font-size:  18px;
+    font-weight: bold;
+  }
+  > .order-restaurant-others{
+    font-size: 12px;
+  }
+}
+
+.order-info-main {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 5px;
+  top: 15px;
+}
+
+.order-adress-main {
+  margin-bottom: 30px;
+  display: flex;
+  display: -webkit-flex;
+  display: -webkit-box;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-pack: justify;
+  > div {
+    flex-grow: 1;
+    -webkit-box-flex: 1;
+     margin-right: 10%;
+
+  }
+  > div:last-child {
+  margin-right: 0;
+}
+}
+
+.order-address-card {
+  border: 1px solid $persian-green;
+  border-radius: 4px;
+  padding: 5px;
+  min-width: 200px;
+  max-width: 250px;
+  text-align: center;
+  & .order-lines{
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+    > .order-line{
+      width: 20px;
+      height: 1px;
+      background-image: linear-gradient(180deg, black, black);
+    }
+  }
+  > .address-title{
+    font-size: 18px;
+    color: white;
+    background-color: $dark-persian-green;
+    text-align: center;
+    padding: 5px;
+  }
+  > .address-name{
+    font-size: 16px;
+    font-weight: bold;
+  }
+  > .address-contact, .address-others {
+    font-size: 12px;
+  }
+  > .address-contact{
+    font-style: italic;
+  }
+}
+
+
+
+#order-info-title{
+  font-size: 25px;
+  padding: 10px;
+  background-color: $persian-green;
+  opacity: 0.8;
+}
+
+.order-info-others{
+  border: 1px solid $persian-green;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 5px;
+  text-align: center;
+  > h2 {
+    padding: 5px;
+    font-size: 15px;
+    margin: 0;
+  }
+}
+
+.pdf-table {
+  table {
+    display: grid;
+    border-collapse: collapse;
+    width: 100%;
+    grid-template-columns: 3.33fr 4.33fr 1.67fr 1.67fr 1.67fr 1.67fr;
+  }
+
+  thead,
+  tbody,
+  tr {
+    display: contents;
+  }
+
+  th,
+  td {
+    padding: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+
+  th {
+    background: $dark-persian-green;
+    text-align: center;
+    font-weight: normal;
+    color: white;
+  }
+
+  th:last-child {
+    border: 0;
+  }
+
+  td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #808080;
+    background: #FAFAFA;
+    border-bottom: 2px solid $light-gray;
+    &.text-short{
+      text-align: center;
+    }
+  }
+}
+
+.pdf-total-order {
+  border-top: solid 1px;
+  margin-top: 10px;
+  text-align: right;
+  padding: 10px 10px 0px 10px;
+  h5 {
+    margin-bottom: 0px;
+  }
+}
+
+///////////////////////////////////////////////////////
+////////////////////// PDF VENDOR /////////////////////
+///////////////////////////////////////////////////////
+
+.infos-company {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.015em;
+  color: $dark-persian-green;
+  border-bottom: 1px solid $dark-persian-green;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.simple_form_suppliers {
+  background: #FFFFFF;
+  border: 3px solid rgba(183, 207, 204, 0.9);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.supplier-name {
+  background: rgba(183, 207, 204, 0.4);
+  border: 1px solid rgba(183, 207, 204, 0.94);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-family: Roboto;
+}
+
+table {
+  .form-info {
+    height: 30px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+}
+
+.form-control:focus {
+  border-color: $persian-green;
+  box-shadow: 0 0 0 0.2rem $persian-green;
+}
+
+.supplier-photo {
+  position: absolute;
+  width: 155px;
+  height: 155px;
+  left: -8px;
+  top: 20px;
+  color: rgba(183, 207, 204, 0.9);
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 150px;
+  border: 1px solid $persian-green;
+  border-radius: 3px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  &:hover {
+    box-shadow: 0 3px 18px 0 rgba(0,0,0,0.12),0 3px 5px -1px rgba(0,0,0,0.2);
+  }
+  & img {
+    width: 100%;
+  }
+}
+
+.form-group.file.optional.supplier_photo {
+  display:none;
+}
+
+.photo-icon {
+  font-size: 40px;
+  color: $persian-green;
+}
+
+.photo-text {
+  font-size: 12px;
+  text-align: center;
+  font-weight: 500;
+  color: $persian-green;
+}
+
+.form-control.text.optional {
+  height: 92px;
+  background: $light-gray;
+  border: 1px solid $dark-persian-green;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.button-supplier {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* PARTIE CHECKBOX*/
+
+.form-check {
+  display: flex;
+  align-items: center;
+  > .form-check-input {
+    margin-top: 0;
+  }
+  > label {
+    padding-left: 5px;
+    color: black!important;
+  }
+}
+
+INPUT[type=checkbox]:focus{
+  outline: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+INPUT[type=checkbox]{
+  background-color: #DDD;
+  border-radius: 5px;
+  appearance: none;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  > label {
+    padding-left: 10px;
+  }
+}
+
+INPUT[type=checkbox]:checked {
+    background-color: #409fd6;
+    background: $persian-green url("data:image/gif;base64,R0lGODlhCwAKAIABAP////3cnSH5BAEKAAEALAAAAAALAAoAAAIUjH+AC73WHIsw0UCjglraO20PNhYAOw==") 3px 3px no-repeat;
+}
+
+///////////////////////////////////////////////////////
+////////////////////// PDF PRODUCT ////////////////////
+///////////////////////////////////////////////////////
+
+.product-card {
+  display: flex;
+  border: 1px solid #C4C4C4;
+  border-radius: 5px;
+  background: white;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  justify-content: space-between;
+  display: -webkit-flex;
+  display: -webkit-box;
+  & h6 {
+    margin: 4px 0;
+  }
+  & ::placeholder {
+    font-style: italic;
+    color: #cac7c7;
+  }
+  label {
+    margin: 0;
+  }
+}
+
+.product-photo {
+  width: 200px;
+  height: 200px;
+  color: rgba(183, 207, 204, 0.9);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.46);
+  border-radius: 3px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  // background: white;
+  & .image {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.product-name {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-bottom: 14px;
+  color: rgba(0, 0, 0, 0.66);
+  //background-color: pink;
+  & h6{
+    //font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: $text-16;
+  }
+}
+
+.product-main-infos {
+  width: 100%;
+  margin-bottom: 10px;
+  .edit-input {
+    font-size: $text-13;
+    //background: pink;
+  }
+}
+
+.product-label-inline {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+  display: -webkit-flex;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  label {
+    padding-right: 10px;
+    //background: pink;
+    //font-family: open sans;
+    font-size: $text-13;
+    font-style: normal;
+    color: rgba(40, 73, 133, 0.55);
+  }
+}
+
+.allergenes-card {
+  margin-bottom: 10px;
+  .allergenes-inputs{
+    flex-wrap: wrap;
+    margin: 5px 0;
+    display: flex;
+  }
+  .allergene-title {
+    font-family: Roboto;
+    font-size: $text-13;
+  }
+  & h6 {
+    color: rgba(255, 50, 50, 0.66);
+  }
+  & label {
+    font-size: $text-11;
+  }
+}
+
+.product-kpi-details {
+  border-radius: 4px;
+  border: 1px solid #C4C4C4;
+  padding-left: 5px;
+  background: #e6f0fc;
+  color: $grey-for-kpi;
+  & label {
+    font-weight: bold;
+    font-size: $text-13;
+  }
+  & .cost-average {
+    font-size: $text-14;
+  }
+  & .green-indicator {
+    color: rgba(16, 192, 12, 0.8);
+    border: rgba(0, 0, 0, 0.4);
+    font-style: italic;
+  }
+  & .red-indicator {
+    color: rgba(255, 50, 50, 0.66);
+    border: rgba(0, 0, 0, 0.66);
+    font-style: italic;
+  }
+}
+
+.product-infos {
+  flex-grow: 1;
+  margin-left: 10px;
+  display: flex;
+  -webkit-box-flex: 1.0;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.product-title {
+  background: $pale-blue;
+  color: #8ba2c3;
+  width: 100%;
+  margin: 20px 0 10px 0;
+  font-size: $text-16;
+
+}
+
+.product-refunit {
+  width: 100%;
+  position: relative;
+}
+
+.product-units-title {
+  font-family: Roboto;
+  text-align: center;
+  margin-top: 20px;
+  height: 45px;
+  color: white;
+  font-weight: bold;
+  align-items: center;
+  background-color: #5C827D;
+  border-bottom: 2px solid $light-gray;
+  th {
+    font-size: $text-13;
+    text-align: center;
+  }
+}
+
+.vertical-line {
+  border-left: 2px solid white;
+  display: inline-block;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 45px;
+}
+
+.product-units-rows {
+  position: relative;
+  font-family: Roboto;
+  text-align: center;
+  align-items: center !important;
+  background-color: #FAFAFA;
+  color: rgba(0, 0, 0, 0.66);
+  margin: 0 !important;
+  height: 45px;
+  padding: 3px;
+  .edit-input, .form-control {
+    font-size: $text-13;
+  }
+  .invalid-feedback {
+    display: none;
+  }
+  & .form-group {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  & .form-group.hidden {
+    display: none;
+  }
+  &:hover {
+    background-color: $very-light-yellow;
+    & .remove-yes {
+      display: block;
+      color: black;
+    }
+  }
+}
+
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid white;
+  text-align: center;
+  margin: 0 3px 3px 0;
+  vertical-align: baseline
+}
+
+.sold-row-description {
+  font-size: 13px;
+}
+
+.trix-content {
+  line-break: anywhere;
+  text-align: initial;
+  padding: 5px;
+  padding-right: 35px;
+  .attachment-gallery {
+    > action-text-attachment,
+    > .attachment {
+      flex: 1 0 33%;
+      padding: 0 0.5em;
+      max-width: 33%;
+    }
+
+    &.attachment-gallery--2,
+    &.attachment-gallery--4 {
+      > action-text-attachment,
+      > .attachment {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+    }
+  }
+
+  action-text-attachment {
+    .attachment {
+      padding: 0 !important;
+      max-width: 100% !important;
+    }
+  }
+}
+
+.notes-card {
+  justify-content: space-between;
+  font-size: $text-13;
+  width: 100%;
+  .form-control {
+    font-size: $text-13;
+  }
+}
+
+.product-sold-cond {
+  margin: 0px 2px 0px 2px;
+  width: 12px;
+}
+
+///////////////////////////////////////////////////////
+////////////////////// PDF RECIPE /////////////////////
+///////////////////////////////////////////////////////
+
+.recipe-card-show {
+  display: flex;
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  padding: 15px;
+  & h6 {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    color: rgba(0, 0, 0, 0.66);
+    border: 1px solid #FFFFFF;
+  }
+}
+
+.recipe-photo-show {
+  width: 9.5em;
+  height: 9.5em;
+  color: rgba(183, 207, 204, 0.9);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.46);
+  border-radius: 3px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  & img {
+    width: 100%;
+  }
+}
+
+.recipe-active-sale {
+  background: rgba(0, 131, 253, 0.09);
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.015em;
+  color: $dark-persian-green;
+  padding: 5px;
+  margin: 0.5rem 0 1rem 0;
+  justify-content: center;
+  form {
+  .form-check {
+      input {
+        margin-left: 0.5em;
+      }
+    }
+  }
+  & label {
+    font-family: Open Sans;
+    font-size: $text-13;
+    line-height: 19px;
+    white-space: nowrap;
+  }
+  .subrecipe {
+    color: $orange;
+  }
+  .otherrecipe {
+    color: $dark-yellow;
+  }
+  .wo-status {
+    color: $medium-black;
+  }
+}
+
+.recipe-show-main-infos {
+  margin: 0 0 0 20px;
+  width: 100%;
+  h6 {
+    font-size: $text-16;
+  }
+  & label {
+    font-family: Roboto;
+    font-style: normal;
+    letter-spacing: -0.015em;
+    font-size: $text-13;
+    line-height: 19px;
+    color: rgba(40, 73, 133, 0.55);
+    margin: 10px 10px 10px 0;
+
+  }
+  .recipe-main-infos {
+    display: flex;
+  }
+  .recipe-info-input {
+    color: rgba(0, 0, 0, 0.66);
+    font-family: Roboto;
+    font-style: normal;
+    font-size: $text-13;
+
+  }
+  .allerg {
+    .allergenes-area {
+      display: flex;
+      flex-wrap: wrap;
+      label {
+        font-size: $text-11;
+      }
+    }
+    & h6 {
+      font-weight: normal !important;
+      font-size: $text-13;
+      color: rgba(255, 50, 50, 0.66);
+    }
+    .recipe-allerg-input {
+      color: rgba(0, 131, 253, 0.72);
+      font-family: Roboto;
+      margin: 0px 10px 10px 0px;
+    }
+  }
+}
+
+.kpi-recap {
+  border-radius: 4px;
+  border: 1px solid #C4C4C4;
+  padding: 0.5em;
+  background: $very-light-gray;
+  font-size: $text-13;
+ .portion-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 5px;
+    & img {
+      width: 100%;
+    }
+  }
+  .recipe-portion-input {
+    color: rgba(0, 0, 0, 0.66);
+    font-family: Roboto;
+    font-style: normal;
+    vertical-align: middle;
+    margin: 5px 0 0.2em 0;
+  }
+  .kpi-analysis {
+    color: rgba(0, 0, 0, 0.66);
+    font-family: Roboto;
+    font-style: normal;
+    vertical-align: middle;
+    margin-top: 5px;
+    align-items: center;
+  }
+  .cost-recap {
+    display: flex;
+    vertical-align: middle;
+    text-align: center;
+    min-width: fit-content;
+    color: rgba(0, 131, 253, 0.72);
+    & label {
+      font-family: Roboto;
+      font-style: normal;
+      margin: 0;
+      margin-right: 5px;
+      color: rgba(0, 131, 253, 0.72);
+    }
+    & span {
+      font-family: Roboto;
+      font-style: normal;
+      margin: 0;
+      margin-right: 5px;
+    }
+  }
+}
+
+
+// .product-card {
+//   display: flex;
+//   border: 1px solid #C4C4C4;
+//   border-radius: 5px;
+//   background: white;
+//   box-sizing: border-box;
+//   padding: 10px;
+//   width: 100%;
+//   justify-content: space-between;
+//   display: -webkit-flex;
+//   display: -webkit-box;
+//   & h6 {
+//     margin: 4px 0;
+//   }
+//   & ::placeholder {
+//     font-style: italic;
+//     color: #cac7c7;
+//   }
+//   label {
+//     margin: 0;
+//   }
+// }
+.recipe-composition-kpis {
+  border: 1px solid #C4C4C4;
+  border-radius: 3px;
+  background: white;
+  box-sizing: border-box;
+  width: 100%;
+
+  justify-content: space-between;
+  padding: 15px;
+  flex-grow: 1;
+  grid-area: cardright;
+  .kpis-legend {
+    font-size: $text-11;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.66);
+  }
+}
+
+.recipes-ingredient-sort-composition {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  font-family: Roboto;
+  text-align: center;
+  margin-top: 10px;
+  height: 30px;
+  color: white;
+  font-weight: bold;
+  align-items: center;
+  background-color: #5C827D;
+  border-bottom: 2px solid $light-gray;
+  padding: 0.3em;
+  h2 {
+    font-size: $text-13;
+  }
+}
+
+.recipes-row-sort-composition {
+  display: grid;
+  font-family: Roboto;
+  grid-template-columns: 2fr 1.5fr;
+  align-items: center;
+  background-color: #FAFAFA;
+  color: rgba(0, 0, 0, 0.66);
+  border-bottom: 2px solid $light-gray;
+  padding: 0.3em;
+  min-height: 2em;
+  margin: 0;
+  cursor: pointer;
+  overflow: hidden;
+  & td {
+    text-align: center;
+    overflow: hidden;
+    font-size: $text-13;
+  }
+  .ingredient-name-label {
+    text-align: left;
+    padding-left: 1em;
+  }
+}
+
+.recipes-row-total-composition {
+  display: grid;
+  font-family: Roboto;
+  grid-template-columns: 2fr 1.5fr;
+  text-align: center;
+  padding: 0.3em;
+  margin: 0;
+  align-items: center;
+  background-color: #cad9e263;
+  opacity: 0.8;
+  border-radius: 4px;
+  & td {
+    color: #085679;
+    font-size: $text-13;
+  }
+  .ingredient-name-label {
+    text-align: left;
+    padding-left: 1em;
+  }
+}
+
+.recipes-row-total-composition-margin {
+  display: grid;
+  font-family: Roboto;
+  grid-template-columns: 2fr 1fr 0.5fr 1fr 1fr 1fr;
+  text-align: center;
+  padding: 0.3em;
+  margin: 0;
+  align-items: center;
+  background-color: rgba(202, 217, 226, 0.39);
+  opacity: 0.8;
+  border-radius: 4px;
+  h2, td {
+    color: #085679;
+    font-size: 13px;
+  }
+  .ingredient-name-label {
+    text-align: left;
+    padding-left: 1em;
+  }
+}
+
+.recipes-ingredient-sort-composition-margin {
+  display: grid;
+  grid-template-columns: 2fr 1fr 0.5fr 1fr 1fr 1fr;
+  font-family: Roboto;
+  text-align: center;
+  margin-top: 10px;
+  height: 30px;
+  color: white;
+  font-weight: bold;
+  align-items: center;
+  background-color: #5C827D;
+  border-bottom: 2px solid $light-gray;
+  padding: 0.3em;
+  h2, th {
+    font-size: 13px;
+  }
+}
+
+.recipes-row-sort-composition-margin {
+  display: grid;
+  font-family: Roboto;
+  grid-template-columns: 2fr 1fr 0.5fr 1fr 1fr 1fr;
+  align-items: center;
+  background-color: #FAFAFA;
+  color: rgba(0, 0, 0, 0.66);
+  border-bottom: 2px solid $light-gray;
+  padding: 0.3em;
+  min-height: 2em;
+  margin: 0;
+  cursor: pointer;
+  overflow: hidden;
+  h2, td {
+    text-align: center;
+    overflow: hidden;
+    font-size: 12px;
+  }
+  .ingredient-name-label {
+    text-align: left;
+    padding-left: 1em;
+  }
+}
+
+.kpis-product-title {
+  color: $dark-persian-green;
+  width: 100%;
+  font-size: $text-13;
+}
+
+.recipe-card-kpis {
+  background: white;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+
+  border-radius: 5px;
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .recipe-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: $text-13;
+  }
+  .recipe-card-part-left {
+    margin: 5px 10px 5px 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 4px;
+    border: 1px solid #C4C4C43d;
+    padding: 0.3em;
+    background: #f8fbff;
+    max-height: fit-content;
+    opacity: 0.8;
+    .recipe-graph {
+      color: rgba(0, 0, 0, 0.66);
+      min-width: 12vw;
+      max-width: 16vw;
+      position: relative;
+    }
+   }
+  .recipe-left-kpi {
+    font-family: Roboto;
+    font-style: normal;
+    letter-spacing: -0.015em;
+    font-size: 18px;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 0.66);
+    & label {
+      font-size: 18px;
+    }
+    .recipe-kpi-input{
+      color: $dark-persian-green;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.recipes-show-ingredient {
+  display: grid;
+  grid-template-columns: 3fr 1fr 3fr 1fr 0.5fr 1fr 1fr 1fr;
+  font-family: Roboto;
+  text-align: center;
+  margin-top: 20px;
+  height: 30px;
+  color: white;
+  font-weight: bold;
+  align-items: center;
+  background-color: #5C827D;
+  border-bottom: 2px solid $light-gray;
+  padding: 0.3em;
+  h2, th {
+    font-size: $text-13;
+  }
+}
+
+.recipes-show-row {
+  display: grid;
+  font-family: Roboto;
+  grid-template-columns: 3fr 1fr 3fr 1fr 0.5fr 1fr 1fr 1fr;
+  text-align: center;
+  align-items: center !important;
+  background-color: #FAFAFA;
+  color: rgba(0, 0, 0, 0.66);
+  border-bottom: 2px solid $light-gray;
+  padding: 0.3em;
+  height: 2.6em;
+  margin: 0;
+  cursor: pointer;
+  overflow: hidden;
+  & td {
+    font-size: $text-13;
+    overflow: hidden;
+  }
+  .ingredient-name-label {
+    text-align: left;
+    padding-left: 1em;
+  }
+}
+
+
+.recipes-show-form {
+  display: grid;
+  font-family: Roboto;
+  grid-template-columns: 3fr 1fr 4fr 0.5fr 0.5fr 1fr 1fr 1fr;
+  text-align: center;
+  align-items: center !important;
+  background-color: #FAFAFA;
+  color: rgba(0, 0, 0, 0.66);
+  border-bottom: 2px solid $light-gray;
+  padding: 0.5em;
+  margin: 0;
+ .form-group {
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  .form-control {
+    justify-content: space-around;
+  }
+  .ingredient_element_id {
+    max-width: 100%;
+    min-width: 1em;
+  }
+  .ingredient-units {
+    width: 100%;
+    margin: 0.5rem;
+    background-color: #FFFFFF;
+    text-align: center;
+    align-items: center !important;
+    height: 2em;
+    border-radius: 4px;
+    font-weight: normal;
+    margin-left: 1em;
+    min-width: 4em;
+    & label {
+      font-weight: normal !important;
+    }
+  }
+  .quantity-ingredient {
+    display: flex;
+    align-items: center;
+    margin: 0.5em;
+    max-width: 6em;
+    min-width: 4em;
+  }
+  .remove-recipe-yes {
+    > a > i {
+      display: block;
+      color: red;
+    }
+  }
+}
+
+
+
+
+.recipes-rows-outside-button {
+  display: grid;
+  grid-template-columns: 11.46fr 0.54fr;
+  margin: 0;
+  padding: 0;
+  &:hover {
+    box-shadow: 2px 2px $inventory-gray;
+    background-color: $light-gray;
+     .remove-recipe-yes {
+      > a > i {
+        display: block;
+        color: red;
+      }
+    }
+  }
+  .remove-recipe-yes {
+    background-color: #FAFAFA;
+    border-bottom: 2px solid $light-gray;
+    text-align: center;
+    align-items: center;
+    > a > i {
+      display: none;
+      margin-top: 0.8em;
+    }
+  }
+  .recipes-show-row {
+    > a {
+      display: grid;
+      font-family: Roboto;
+      grid-template-columns: 3fr 1fr 3fr 1fr 0.5fr 1fr 1fr 1fr;
+      text-align: center;
+      align-items: center !important;
+      background-color: #FAFAFA;
+      color: rgba(0, 0, 0, 0.66);
+      border-bottom: 2px solid $light-gray;
+      padding: 0.3em;
+      padding-right: 0;
+      height: 2.6em;
+      margin: 0;
+      cursor: pointer;
+      overflow: hidden;
+      & h2 {
+        font-size: $text-13;
+        overflow: hidden;
+      }
+      .ingredient-name-label {
+        text-align: left;
+        padding-left: 1em;
+      }
+    }
+  }
+}
+
+.recipes-show-total-gross-size {
+  display: grid;
+  font-family: Roboto;
+  grid-template-columns: 3fr 1fr 3fr 1fr 0.5fr 1fr 1fr 1fr;
+  text-align: center;
+  padding: 0.5em;
+  margin: 0;
+  align-items: center;
+  background-color: rgba(233, 236, 239, 1);
+  opacity: 0.6;
+  border-radius: 4px;
+  color: rgba(40, 73, 133, 1);
+  h2, td {
+    font-size: $text-13;
+  }
+  .total-size-label {
+    text-align: left;
+    padding-left: 1em;
+  }
+}
+
+.recipes-show-total-net-size {
+  display: grid;
+  font-family: Roboto;
+  grid-template-columns: 3fr 1fr 3fr 1fr 0.5fr 1fr 1fr 1fr;
+  text-align: center;
+  padding: 0.3em;
+  margin: 0;
+  align-items: center;
+  background-color: rgba(202, 217, 226, 0.39);
+  border: 1px solid #7f9fc3;
+  border-radius: 4px;
+  & h2, td {
+    font-size: $text-13;
+    color: #085679;
+  }
+  .total-size-label {
+    text-align: left;
+    padding-left: 1em;
+  }
+  .total-var-rate-label {
+    text-align: left;
+    //padding-left: 1em;
+    font-style: italic;
+    margin-top: 0.7em;
+    color: #C8912D;
+  }
+  .total-var-rate-value {
+    text-align: center;
+    font-style: italic;
+    margin-top: 0.7em;
+    color: #C8912D;
+  }
+  .total-cost-compute {
+    padding-bottom: 2em;
+  }
+}

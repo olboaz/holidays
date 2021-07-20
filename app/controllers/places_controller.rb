@@ -19,10 +19,26 @@ class PlacesController < ApplicationController
     end
   end
 
+  def show
+     @place = Place.find(params[id])
+  end
+
+  def send_mail
+    @order = Place.find(params[:order_id])
+     @restaurant = @order.user
+     raise
+    PdfMailer.with(rest: @restaurant).order_mailer(@order).deliver_later
+    redirect_to places_path
+    flash[:success] = "Place n°: #{@order.name} (#{@order.address}) envoyée par email"
+  end
+
   private
 
   def place_params
     params.require(:place).permit(:name, :description, :address, :user_id)
   end
+
+
+
 
 end
