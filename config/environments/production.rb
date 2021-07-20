@@ -92,12 +92,13 @@ Rails.application.configure do
   # Initializer for mailer
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    port: 587,
-    address: 'smtp.gmail.com',
-    user_name: ENV['SMTP_USER_NAME'],
-    password: ENV['SMTP_PASSWORD'],
-    authentication: :plain,
-    enable_starttls_auto: true
+    port: 465,
+    address: 'encelade.o2switch.net',
+    user_name: ENV['O2_USER_NAME'],
+    password: ENV['O2_PASSWORD'],
+    authentication: :login,
+    :enable_starttls_auto => true,
+    ssl: true,
   }
 
   # Do not dump schema after migrations.
