@@ -5,11 +5,20 @@
       <tr>
         <th style="padding-left: 10px;">Nom</th>
         <th>Lieu</th>
+        <th>Mail</th>
       </tr>
       <tr>
         <% @places.each do |place| %>
           <td style="padding-left: 10px;"><%= place.name %></td>
           <td><%= place.address %></td>
+          <td>
+            <i class="fa fa-check active-saledirect order-sent-checked mr-3"></i>
+            <button class="button-send-mail-order onemore" type="button">
+              <%= link_to send_mail_path(:order_id => place) do %>
+                <i class="fas fa-paper-plane"></i><span class="text-symbol-send text-order-send"> +1 </span>
+              <% end %>
+            </button>
+          </td>
         <% end %>
       </tr>
     </table>

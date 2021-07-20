@@ -34,6 +34,12 @@ gem 'devise'
 
 gem 'geocoder'
 
+# Generate PDF files from HTML
+gem 'wicked_pdf'
+# Wicked PDF WebKit browser dependency
+gem 'wkhtmltopdf-binary'
+
+
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'

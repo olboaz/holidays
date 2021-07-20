@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+
+  </head>
+  <body style="padding: 30px;background: #e4eeeb">
+    <table style="margin-left: auto;margin-right: auto">
+    <tr class="main" style="margin: 0 auto; ">
+      <td class="card" style="width: 583px;background: white; border: 1px solid grey; border-radius: 4px; padding: 30px;">
+        <div style="margin: 0 auto;" >
+          <h2 style="text-align: center; color: darkcyan; margin: 0;">Commande de <%=@restaurant.username%></h2>
+        </div>
+        <p>Bonjour,</p>
+        <p>
+        Veuillez trouver ci-joint la commande N°: <strong> <%= @orderpdf.name %></strong>.
+        </p>
+        <p>
+        Montant H.T. : <strong><%= @orderpdf.address %> €</strong>
+        </p>
+        <p>
+        Merci de bien vouloir m’indiquer par retour la bonne prise en compte de cette commande,<br>
+        et de l'indiquer sur votre facture.
+        </p>
+        <p>Cordialement,</p>
+        <p><%= @restaurant.email %></p>
+        <br>
+        <div style="display: flex; align-items: center; margin: 0 auto;" >
+          <span class="simplyrest" style="text-align: center; margin-right: 10px;">
+            <%= image_tag(attachments['logo.png'].url, :class => "img_logo", :style => "width: 30px;" ) %>
+          </span>
+          <span style="color: #1c7c71; text-align: center;"> Votre application au quotidien !</span>
+        </div>
+      </td>
+    </tr>
+    </table>
+  </body>
+</html>
