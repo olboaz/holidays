@@ -25,8 +25,8 @@ class PlacesController < ApplicationController
 
   def send_mail
     @order = Place.find(params[:order_id])
-     @restaurant = @order.user
-     raise
+    @restaurant = @order.user
+
     PdfMailer.with(rest: @restaurant).order_mailer(@order).deliver_later
     redirect_to places_path
     flash[:success] = "Place n°: #{@order.name} (#{@order.address}) envoyée par email"
