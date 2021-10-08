@@ -6,10 +6,15 @@
         <th style="padding-left: 10px;">Nom</th>
         <th>Lieu</th>
         <th>Mail</th>
+        <th>...</th>
       </tr>
       <tr>
         <% @places.each do |place| %>
-          <td style="padding-left: 10px;"><%= place.name %></td>
+          <td style="padding-left: 10px;">
+              <%= link_to place_path(place) do  %>
+                <%= place.name %>
+              <% end %>
+          </td>
           <td><%= place.address %></td>
           <td>
             <i class="fa fa-check active-saledirect order-sent-checked mr-3"></i>
@@ -18,6 +23,12 @@
                 <i class="fas fa-paper-plane"></i><span class="text-symbol-send text-order-send"> +1 </span>
               <% end %>
             </button>
+          </td>
+
+          <td>
+            <%= link_to edit_place_path(place) do %>
+               <i class="fas fa-pencil-alt"></i>
+            <% end %>
           </td>
         <% end %>
       </tr>

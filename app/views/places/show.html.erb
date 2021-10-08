@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="d-flex align-items-center">
+    <div class="container background background-filter" style="width: 800px;padding:0;">
+      <div class="row">
+        <div class="col-12">
+
+          <h1 class="text-center my-3">Mon lieu de vacance : <%= @place.name %></h1>
+
+            <div class="form-place">
+              <div class="d-flex flex-column">
+                <div> Description: <%= @place.description %> </div>
+                <div> Addresse : <%= @place.address %> </div>
+                <div> EAN : <%= @place.upc %> </div>
+                <div>
+                  <%= simple_form_for (@place) , remote: true do |f|  %>
+                    <%= f.input :upc, placeholder: 'Code Barre', label: false %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<div id='barcode-scanner'></div>
+</div>
+
