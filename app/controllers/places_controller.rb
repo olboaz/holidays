@@ -6,6 +6,7 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
+    @place.upc = params[:upc]
   end
 
   def create
@@ -19,8 +20,22 @@ class PlacesController < ApplicationController
     end
   end
 
+  def edit
+    @place = Place.find(params[:id])
+  end
+
+  def update
+    @place = Place.find(params[:id])
+
+    if @place.update(place_params)
+      redirect_to place_path(@place)
+    else
+      render :new
+    end
+  end
+
   def show
-     @place = Place.find(params[id])
+     @place = Place.find(params[:id])
   end
 
   def send_mail
@@ -32,13 +47,16 @@ class PlacesController < ApplicationController
     flash[:success] = "Place n°: #{@order.name} (#{@order.address}) envoyée par email"
   end
 
+  def get_barcode
+    @place = Place.find(params[:id])
+    @place.update(upc: params[:upc])
+    redirect_to @place
+  end
+
   private
 
   def place_params
-    params.require(:place).permit(:name, :description, :address, :user_id)
+    params.require(:place).permit(:name, :description, :address, :user_id, :upc )
   end
-
-
-
 
 end
